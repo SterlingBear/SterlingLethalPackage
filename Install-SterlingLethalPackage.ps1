@@ -2,7 +2,6 @@ function Get-PlatformInfo {
     $arch = [System.Environment]::GetEnvironmentVariable("PROCESSOR_ARCHITECTURE")
     
     switch ($arch) {
-    	"x64" { return "X64" }
         "AMD64" { return "X64" }
         "IA64" { return "X64" }
         "ARM64" { return "X64" }
@@ -68,7 +67,7 @@ function Install ($arguments) {
 
         switch -Wildcard ($name) {
             "BepInEx_unix*" { $platform2Asset["Unix"] = $asset.browser_download_url; break }
-            "BepInEx_x64*" { $platform2Asset["X64"] = $asset.browser_download_url; break }
+            "BepInEx_win_x64*" { $platform2Asset["X64"] = $asset.browser_download_url; break }
             "BepInEx_x86*" { $platform2Asset["X86"] = $asset.browser_download_url; break }
         }
     }
