@@ -2,10 +2,10 @@ function Get-PlatformInfo {
     $arch = [System.Environment]::GetEnvironmentVariable("PROCESSOR_ARCHITECTURE")
     
     switch ($arch) {
-        "AMD64" { return "X64" }
-        "IA64" { return "X64" }
-        "ARM64" { return "X64" }
-        "EM64T" { return "X64" }
+        "AMD64" { return "X84" }
+        "IA64" { return "X84" }
+        "ARM64" { return "X84" }
+        "EM64T" { return "X84" }
         "x86" { return "X86" }
         default { throw "Unknown architecture: $arch. Submit a bug report to KrystilizeNevaDies/Lethalize." }
     }
