@@ -107,18 +107,28 @@ function Install ($arguments) {
     Expand-Stream $stream $lethalCompanyPath
     Write-Host "Installed BepInEx"
     Write-Host ""
-    
-    Write-Host "Downloading and installing MoreCompany"
-    $moreCompanyVersion = Get-Arg $arguments "-morecompany"
-    $moreCompanyUrl = "https://thunderstore.io/package/download/notnotnotswipez/MoreCompany/$moreCompanyVersion/"
-    $moreCompanyStream = Request-Stream $moreCompanyUrl
-    Expand-Stream $moreCompanyStream $lethalCompanyPath
-    Write-Host "Installed MoreCompany"
+
+    # Download and install lcapi
+    Write-Host "Downloading and installing LC_API"
+    $lcapiVersion = Get-Arg $arguments "-lcapi"
+    $lcapiUrl = "https://thunderstore.io/package/download/DrFeederino/LC_API_V50/$lcapiVersion/"
+    $lcapiStream = Request-Stream $lcapiUrl
+    Expand-Stream $lcapiStream $lethalCompanyPath
+    Write-Host "Installed LC_API"
+    Write-Host ""
+
+    # Download and install morecompany
+    Write-Host "Downloading and installing moreCompany"
+    $biggerLobbyVersion = Get-Arg $arguments "-morecompany"
+    $biggerLobbyUrl = "https://thunderstore.io/package/download/notnotnotswipez/MoreCompany/$biggerLobbyVersion/"
+    $biggerLobbyStream = Request-Stream $biggerLobbyUrl
+    Expand-Stream $biggerLobbyStream $lethalCompanyPath
+    Write-Host "Installed morecompany"
     Write-Host ""
 	
 	Write-Host "Downloading Teleporter Patch"
     $teleporterVersion = Get-Arg $arguments "-teleporter"
-    $teleporterUrl = "https://thunderstore.io/package/download/RugbugRedfern/Skinwalkers/1.0.7/"
+    $teleporterUrl = "https://thunderstore.io/package/download/RugbugRedfern/Skinwalkers/$teleporterVersion/"
     $teleporterStream = Request-Stream $teleporterUrl
     Expand-Stream $teleporterStream $lethalCompanyPath
     Write-Host "Installed teleporter patch"
