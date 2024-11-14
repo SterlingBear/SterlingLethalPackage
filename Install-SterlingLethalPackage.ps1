@@ -67,7 +67,7 @@ function Install ($arguments) {
 
         switch -Wildcard ($name) {
             "BepInEx_unix*" { $platform2Asset["Unix"] = $asset.browser_download_url; break }
-            "BepInEx_win_x64*" { $platform2Asset["X64"] = $asset.browser_download_url; break }
+            "BepInEx_win_x64_5.4.23.2.zip" { $platform2Asset["X64"] = $asset.browser_download_url; break }
             "BepInEx_x86*" { $platform2Asset["X86"] = $asset.browser_download_url; break }
         }
     }
