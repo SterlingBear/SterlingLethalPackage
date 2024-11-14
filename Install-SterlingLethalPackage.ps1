@@ -86,7 +86,7 @@ function Install ($arguments) {
     Write-Host "Downloaded $assetUrl"
     Write-Host ""
 
-    $lethalCompanyPath = (Get-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 1966720").InstallLocation
+    $lethalCompanyPath = (Get-ItemProperty -Path "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 1966720").InstallLocation
     if ($null -eq $lethalCompanyPath) {
         throw "Steam Lethal Company install not found"
     }
